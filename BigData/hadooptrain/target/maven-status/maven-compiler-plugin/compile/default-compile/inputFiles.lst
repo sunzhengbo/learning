@@ -1,0 +1,5 @@
+/home/sunzb/workspace/IdeaProjects/hadooptrain/src/main/java/com/imooc/hadoop/mapreduce/WordCountCombinerApp.java
+/home/sunzb/workspace/IdeaProjects/hadooptrain/src/main/java/com/imooc/hadoop/mapreduce/PartitionerApp.java
+/home/sunzb/workspace/IdeaProjects/hadooptrain/src/main/java/com/imooc/hadoop/mapreduce/WordCountAutoDelApp.java
+/home/sunzb/workspace/IdeaProjects/hadooptrain/src/main/java/com/imooc/hadoop/logparse/LogParseApp.java
+/home/sunzb/workspace/IdeaProjects/hadooptrain/src/main/java/com/imooc/hadoop/mapreduce/WordCountApp.java

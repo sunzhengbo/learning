@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.imooc.hadoop</groupId>
+  <artifactId>hadoop-train</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>hadoop-train</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!--配置Hadoop版本-->
+    <hadoop.version>2.6.0-cdh5.7.0</hadoop.version>
+  </properties>
+
+  <!--配置Hadoop的仓库，因为cdh不是默认的Hadoop版本，所以需要配置该版本的url-->
+  <repositories>
+    <repository>
+      <id>cloudera</id>
+      <url>http://repository.cloudera.com/artifactory/cloudera-repos</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <!--添加Hadoop依赖-->
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-client</artifactId>
+      <version>${hadoop.version}</version>
+      <!--打包的时候不打包-->
+      <scope>provided</scope>
+    </dependency>
+
+    <!--添加单元测试依赖-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!--添加UserAgentParser-->
+    <dependency>
+      <groupId>com.kumkee</groupId>
+      <artifactId>UserAgentParser</artifactId>
+      <version>0.0.1</version>
+    </dependency>
+  </dependencies>
+
+  <!--在打包的时候把第三方类库也打包在内-->
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
